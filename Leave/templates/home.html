@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave | It Easy</title>
+  
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url("{% static "\banner\background-03-3840x620.jpg"%}");
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .logo h1 {
+        font-size: 32px;
+        color: white;
+    }
+    
+    .logo span {
+        background-color: yellow;
+        color: black;
+        padding: 0 5px;
+        margin-left: 5px;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    
+    .cta .btn {
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    
+    .hero {
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+    
+    .hero-content h1 {
+        font-size: 80px;
+        font-weight: bold;
+    }
+    
+    .hero-content p {
+        font-size: 24px;
+        margin-top: 20px;
+        max-width: 600px;
+    }
+    
+    .food-elements {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .chat-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        color: black;
+    }
+    
+    .chat-widget form {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    .chat-widget input {
+        padding: 10px;
+        flex: 1;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .chat-widget button {
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Footer Styles */
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    footer .footer-content {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    footer .footer-content p {
+        max-width: 600px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    footer .footer-links {
+        margin-top: 20px;
+    }
+
+    footer .footer-links a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+    }
+
+    footer .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+    footer .footer-social-icons {
+        margin-top: 20px;
+    }
+
+    footer .footer-social-icons a {
+        margin: 0 10px;
+        color: #fff;
+        font-size: 24px;
+    }
+    
+    
+    </style> 
+  
+    <!-- Link to external stylesheet -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Leave <span>It</span></h1>
+            <p>Easy</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Parents Approval </a></li>
+                <li><a href="#leave history"> History </a><li>
+                <li><a href="#leave planner ">Planner </a><li>
+                <li><a href="#apply">Apply</a></li>
+
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="cta">
+            <a href="{% url "login"%}" class="btn">Login</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>WELCOME</h1>
+            <p>Hotel Life Hogi Smooth ,Leave It Easy ke Sath </p>
+        </div>
+        <div class="food-elements">
+            <!-- You can place background food imagery here -->
+        </div>
+    </section> 
+    <h1 class="block-effect" style="--td: 1.2s">
+      <div class="block-reveal" style="--bc: #4040bf; --d: .1s">WELCOME</div>
+      <div class="block-reveal" style="--bc: #bf4060; --d: .5s">Hotel Life Hogi Smooth ,Leave It Easy ke Sath </div>
+    </h1>
+    
+    <div class="info">
+      <p>Change --td (total duration) to increase/decrease the time of the effect in HTML panel.</p>
+    </div>
+    
+    <a href="https://abubakersaeed.netlify.app/designs/d12-block-revealing-effect" class="abs-site-link" rel="nofollow noreferrer" target="_blank">abs/designs/d12-block-revealing-effect</a>
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <p>Welcome back, let us know if you have any questions.</p>
+        <form>
+            <input type="text" placeholder="Write a message..." />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Feel free to reach out to us via email or follow us on our social media channels for updates and more information.</p>
+            
+            <div class="footer-links">
+                <a href="mailto:info@leaveiteasy.com">info@leaveiteasy.com</a>
+                <a href="#contacts">Phone: +123 456 7890</a>
+            </div>
+            
+            <div class="footer-social-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
