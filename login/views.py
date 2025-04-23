@@ -17,10 +17,14 @@ from django.contrib.auth.hashers import make_password,check_password
 
 # Create your views here.
 def home(request):
+    print("requested")
     return render(request,"index.html")
 
 def main_home(request):
       return render()
+
+def logged(request):
+    return render(request,"logged_user.html")
 
 def registration(request):
     form = SignupForm()
@@ -66,4 +70,7 @@ def login_user(request):
 
 
 #****api****
+def leave_form(request):
+    return render(request,"form.html")
+
 
