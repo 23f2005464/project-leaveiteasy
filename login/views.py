@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect,HttpResponse
-from .forms import SignupForm
+from .forms import SignupForm,LeaveApplicationForm
 from .models import *
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
@@ -73,4 +73,12 @@ def login_user(request):
 def leave_form(request):
     return render(request,"form.html")
 
-
+def leave_application_view(request):
+    if request.method == 'POST':
+        form = LeaveApplicationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')  # replace with your URL name
+    else:
+        form = LeaveApplicationForm()
+    return render(request, 'form.html', {'form': form})
