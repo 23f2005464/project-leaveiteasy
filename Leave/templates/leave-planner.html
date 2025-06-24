@@ -1,0 +1,325 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Planner</title>
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5fdfc;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #0072ff;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+    nav a.active {
+      color: #0072ff;
+      border-bottom: 2px solid #0072ff;
+    }
+    .btn-signin {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .container {
+      padding: 2rem;
+    }
+    #calendar {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Leave It Easy</div>
+    <nav>
+      <a herf="{%url "logged"%}">Home</a>
+      <a href="{% url "form_submission"%}">Apply</a>
+      {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Planner</title>
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5fdfc;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #0072ff;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+    nav a.active {
+      color: #0072ff;
+      border-bottom: 2px solid #0072ff;
+    }
+    .btn-signin {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .container {
+      padding: 2rem;
+    }
+    #calendar {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Leave It Easy</div>
+    <nav>
+      <a herf="{%url "logged"%}">Home</a>
+      <a href="{% url "student_dash"%}">Approvals</a>
+      <a href="{% url "Warden"%}">wardendashboard</a>
+      <a class="active" href="{%url "leave_planner"%}">Leave Planner</a>
+    </nav>
+    
+    <button class="btn-signin">Logout</button>
+  </header>
+  <div class="container">
+    <h2>Leave Planner</h2>
+    <div id='calendar'></div>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        height: 'auto',
+        events: [
+          {
+            title: 'John Doe - Medical Leave',
+            start: '2025-04-10',
+            end: '2025-04-13',
+            color: '#28a745'
+          },
+          {
+            title: 'Jane Smith - Academic Competition',
+            start: '2025-04-15',
+            end: '2025-04-18',
+            color: '#28a745'
+          },
+          {
+            title: 'Emily Johnson - Family Event',
+            start: '2025-04-21',
+            end: '2025-04-22',
+            color: '#28a745'
+          },
+          {
+            title: 'Ravi Kumar - Emergency Leave',
+            start: '2025-04-24',
+            end: '2025-04-25',
+            color: '#28a745'
+          },
+          {
+            title: 'Priya Sharma - Medical Checkup',
+            start: '2025-04-27',
+            end: '2025-04-28',
+            color: '#28a745'
+          },
+          {
+            title: 'Aarav Verma - Internship Orientation',
+            start: '2025-05-01',
+            end: '2025-05-03',
+            color: '#28a745'
+          }
+        ]
+      });
+      calendar.render();
+    });
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
+      <a class="active" href="{%url "leave_planner"%}">Leave Planner</a>
+    </nav>
+    
+    <button class="btn-signin">Logout</button>
+  </header>
+  <div class="container">
+    <h2>Leave Planner</h2>
+    <div id='calendar'></div>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        height: 'auto',
+        events: [
+          {
+            title: 'John Doe - Medical Leave',
+            start: '2025-04-10',
+            end: '2025-04-13',
+            color: '#28a745'
+          },
+          {
+            title: 'Jane Smith - Academic Competition',
+            start: '2025-04-15',
+            end: '2025-04-18',
+            color: '#28a745'
+          },
+          {
+            title: 'Emily Johnson - Family Event',
+            start: '2025-04-21',
+            end: '2025-04-22',
+            color: '#28a745'
+          },
+          {
+            title: 'Ravi Kumar - Emergency Leave',
+            start: '2025-04-24',
+            end: '2025-04-25',
+            color: '#28a745'
+          },
+          {
+            title: 'Priya Sharma - Medical Checkup',
+            start: '2025-04-27',
+            end: '2025-04-28',
+            color: '#28a745'
+          },
+          {
+            title: 'Aarav Verma - Internship Orientation',
+            start: '2025-05-01',
+            end: '2025-05-03',
+            color: '#28a745'
+          }
+        ]
+      });
+      calendar.render();
+    });
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

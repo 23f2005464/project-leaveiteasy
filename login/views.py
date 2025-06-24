@@ -58,7 +58,7 @@ def login_user(request):
                 if user_type == 'user':
                     return JsonResponse({'success': True, 'redirect_url': '/home'})
                 elif user_type == 'admin':
-                    return JsonResponse({'success': True, 'redirect_url': '/admin/'})
+                    return JsonResponse({'success': True, 'redirect_url': 'warden'})
                 else:
                     return JsonResponse({'success': False, 'error': 'Invalid user type'})
             else:
@@ -82,3 +82,15 @@ def leave_application_view(request):
     else:
         form = LeaveApplicationForm()
     return render(request, 'form.html', {'form': form})
+
+def student_dashboard(request):
+    return render(request,"student_dashboard.html")
+
+def leave_planner(request):
+    return render(request,"leave_planner.html")
+
+def warden_dashboard(request):
+    return render(request,"warden_dashboard.html")
+
+def warden_approvals(request):
+    return render(request,"warden_approvals.html")

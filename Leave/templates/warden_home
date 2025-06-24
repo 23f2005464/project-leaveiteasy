@@ -80,7 +80,7 @@ https://templatemo.com/tm-570-chain-app-dev
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="{% url "leave_form" %}">Apply</a></li>
+              <li class="scroll-to-section"><a href="#services">Apply</a></li>
               <li class="scroll-to-section"><a href="#about">Approvals</a></li>
               <li class="scroll-to-section"><a href="#pricing">History</a></li>
               <li ><a href="{% url 'page_not' %}">Leave Planner </a></li>
